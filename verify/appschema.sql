@@ -86,4 +86,10 @@ SELECT EXISTS (
     WHERE typname = 'reaction_type'
 );
 
+SELECT EXISTS (
+    SELECT 1
+    FROM pg_type
+    WHERE typname = 'role_type'
+);
+
 ROLLBACK;

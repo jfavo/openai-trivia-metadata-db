@@ -8,6 +8,11 @@ CREATE TYPE "reaction_type" AS ENUM (
   'custom'
 );
 
+CREATE TYPE "role_type" AS ENUM (
+  'standard',
+  'admin'
+);
+
 CREATE TABLE "follows" (
   "following_user_id" integer,
   "followed_user_id" integer,
@@ -17,9 +22,10 @@ CREATE TABLE "follows" (
 CREATE TABLE "users" (
   "id" integer PRIMARY KEY,
   "username" varchar,
+  "password" varchar,
   "email" varchar,
   "birth_date" timestamp,
-  "role" varchar,
+  "role" role_type,
   "created_at" timestamp
 );
 
