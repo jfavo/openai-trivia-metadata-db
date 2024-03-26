@@ -2,6 +2,14 @@
 
 BEGIN;
 
+-- Verify pgcrypto extension exists
+SELECT EXISTS (
+    SELECT 1
+    FROM pg_extension
+    WHERE extname = 'pgcrypto'
+);
+
+-- Verify that the tables were created
 SELECT EXISTS (
     SELECT 1
     FROM pg_tables
@@ -79,7 +87,7 @@ SELECT EXISTS (
     AND tablename = 'match_histories'
 );
 
--- Verify our created Enum type exists
+-- Verify our created Enum types exist
 SELECT EXISTS (
     SELECT 1
     FROM pg_type

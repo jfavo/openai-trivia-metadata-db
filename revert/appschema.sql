@@ -2,6 +2,7 @@
 
 BEGIN;
 
+DROP EXTENSION "pgcrypto";
 DROP TABLE "friend_requests";
 DROP TABLE "friends";
 DROP TABLE "follows";

@@ -2,6 +2,8 @@
 
 BEGIN;
 
+CREATE EXTENSION "pgcrypto";
+
 CREATE TYPE "reaction_type" AS ENUM (
   'like',
   'dislike',
